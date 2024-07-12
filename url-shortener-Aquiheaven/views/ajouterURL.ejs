@@ -1,0 +1,24 @@
+<%- include("./partials/header.ejs", {title: "Home page"}) %>
+<h1>Ajouter une URL</h1>
+    
+    <!-- Formulaire pour ajouter une nouvelle URL -->
+    <form action="/ajouterURL" method="POST">
+        <label for="urlLong">URL Longue :</label>
+        <input type="text" id="urlLong" name="urlLong" required>
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <h2>Liste des URLs raccourcies</h2>
+    <ul>
+        <% allURL.forEach(function(url) { %>
+            <li>
+                <a href="<%= url.shortUrl %>"><%= url.shortUrl %></a> (QR Code)
+                <img src="<%= url.qrCode %>" alt="QR Code">
+                <button class="delete-button" data-id="<%= url.id %>">Supprimer</button>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/">home</a>
+    <script src="/js/delete.js"></script>
+   
+    <%- include("./partials/footer.ejs") %>

@@ -1,0 +1,68 @@
+<%- include("./partials/header.ejs", {title: "Home page"}) %>
+
+<!-- <h1>Liste des URLs raccourcies</h1>
+<ul>
+    <% for (let shortId in urls) { %>
+        <li>
+            <a href="<%= urls[shortId] %>"><%= urls[shortId] %></a>
+            (<a href="/<%= shortId %>"><%= shortId %></a>)
+            <form action="/delete/<%= shortId %>" method="post" style="display:inline;">
+                <button type="submit">Supprimer</button>
+            </form>
+        </li>
+    <% } %>
+</ul>
+<br>
+<a href="/">Raccourcir une autre URL</a> -->
+<!-- <h1>Liste des URLs Raccourcies</h1>
+    <table>
+        <tr>
+            <th>URL Longue</th>
+            <th>URL Courte</th>
+            <th>QR Code</th>
+            <th>Action</th>
+        </tr>
+        <% urls.forEach(url => { %>
+        <tr>
+            <td><%= url.longUrl %></td>
+            <td><a href="<%= url.shortUrl %>"><%= url.shortUrl %></a></td>
+            <td><img src="<%= url.qrCodePng %>" alt="QR Code"></td>
+            <td>
+                <form action="/delete" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette URL ?');">
+                    <input type="hidden" name="id" value="<%= url.id %>">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+    <br>
+    <a href="/">Raccourcir une nouvelle URL</a> -->
+
+    <!-- <h1>Liste des URLs Raccourcies</h1>
+    <table>
+        <tr>
+            <th>URL Longue</th>
+            <th>URL Courte</th>
+            <th>QR Code</th>
+            <th>Action</th>
+        </tr>
+        <% urls.forEach(url => { %>
+        <tr>
+            <td><%= url.longUrl %></td>
+            <td><a href="<%= url.shortUrl %>"><%= url.shortUrl %></a></td>
+            <td><img src="<%= url.qrCodePng %>" alt="QR Code"></td>
+            <td>
+                <form action="/delete" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette URL ?');">
+                    <input type="hidden" name="id" value="<%= url.id %>">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </td>
+        </tr>
+        <% }); %>
+    </table>
+    <br>
+    <a href="/">Raccourcir une nouvelle URL</a>
+
+<script src="/js/delete.js"></script> -->
+<%- include("./partials/footer.ejs") %>

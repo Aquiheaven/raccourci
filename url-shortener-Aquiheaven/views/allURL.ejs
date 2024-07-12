@@ -1,0 +1,14 @@
+<%- include("./partials/header.ejs", {title: "Home page"}) %>
+<h1>Liste des URLs raccourcies</h1>
+    <ul>
+        <% allURL.forEach(function(url) { %>
+            <li>
+                <a href="/<%= url.urlCourt %>"><%= url.urlCourt %></a> - <%= url.urlLong %>
+                <br>
+                <img src="<%= url.codeQR %>" alt="QR Code">
+                <button class="delete-button" data-id="<%= url.id %>">Supprimer</button>
+            </li>
+        <% }); %>
+    </ul>
+    <script src="/js/delete.js"></script>
+<%- include("./partials/footer.ejs") %>
